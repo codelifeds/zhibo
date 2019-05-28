@@ -1,0 +1,27 @@
+初始化版本库遇到错误:
+
+1:
+
+$ git remote add origin git@github.com:codelifeds/zhibo.git
+fatal: remote origin already exists.
+ 
+解决方案：
+
+1、先輸入$ git remote rm origin
+
+2、再輸入$ git remote add origin git@github.com:codelifeds/zhibo.git 就不會報錯了！
+
+$git push origin master
+
+
+2:
+$git push origin master
+! [rejected]     master -> master (fetch first)
+error: failed to push some refs to 'http://git.baiyimao.com/baiyimaoDevolep/WGZY.git'
+hint: Updates were rejected because the remote contains work that you dohint: not have locally. This is usually caused by another repository pushinghint: to the same ref. You may want to first integrate the remote changeshint: (e.g., 'git pull ...') before pushing again.hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+解决方案：在使用git 对源代码进行push到gitHub时可能会出错，信息如下此时很多人会尝试下面的命令把当前分支代码上传到master分支上
+$ git push -u origin master
+但依然没能解决问题出现错误的主要原因是github中的README.md文件不在本地代码目录中可以通过如下命令进行代码合并
+【注：pull=fetch+merge]git pull --rebase origin master执行上面代码后可以看到本地代码库中多了README.md文件
+
